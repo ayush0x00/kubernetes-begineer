@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: green
+  labels: # services identify pods via labels
+    app: blue-green
+
+spec:
+  containers:
+    - name: green
+      image: docker.io/mtinside/blue-green:green #container that has a green page running
