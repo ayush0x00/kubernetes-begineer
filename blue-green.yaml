@@ -1,18 +1,18 @@
-apiVersion: v1
-kind: Service
+#apiVersion: v1
+#kind: Service
 
-metadata:
-  name: blue-green
-spec:
-  type: NodePort #ClusterIP #allows pods to talk internally within cluster only
+#metadata:
+#  name: blue-green
+#spec:
+#  type: NodePort #ClusterIP #allows pods to talk internally within cluster only
 
-  #NodePort opens another port on the node, through which traffic can be redirected
-  # to the port on which the service is listening ie. 80
-  # This in turn, will forward the traffic to the target port of Pods with matching selectors
+#NodePort opens another port on the node, through which traffic can be redirected
+# to the port on which the service is listening ie. 80
+# This in turn, will forward the traffic to the target port of Pods with matching selectors
 
-  ports:
-    - port: 80 #port to talk to the servie within the cluster
-      targetPort: 8080 #target port where Pods are listening
-  selector:
-    app: blue-green # all the Pods with app label as blue-green will be served by the service
-    # so sometimes blue pod get served, and sometimes green pod
+#  ports:
+#    - port: 2346 #port to talk to the servie within the cluster
+#      targetPort: 8080 #target port where Pods are listening
+#  selector:
+#    app: blue-green # all the Pods with app label as blue-green will be served by the service
+#    # so sometimes blue pod get served, and sometimes green pod

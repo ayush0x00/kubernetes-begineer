@@ -4,8 +4,22 @@ metadata:
   name: green
   labels: # services identify pods via labels
     app: blue-green
+    colour: green
 
 spec:
   containers:
     - name: green
       image: docker.io/mtinside/blue-green:green #container that has a green page running
+
+---
+apiVersion: v1 # creating seperate services for blue and gree pods
+kind: Service
+metadata:
+  name: green
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: blue-green
+    colour: green
